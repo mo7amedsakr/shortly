@@ -31,9 +31,12 @@ const ShortenItSection = () => {
   const createShortenLink = async () => {
     if (isUrl(inputValue)) {
       setLoading(true);
-      const res = await axios.post('https://rel.ink/api/links/', {
-        url: inputValue,
-      });
+      const res = await axios.post(
+        'https://short-ly-url.herokuapp.com/api/url',
+        {
+          url: inputValue,
+        }
+      );
       setLoading(false);
       setShortenLinks((prev) => [
         {
