@@ -1,0 +1,31 @@
+.Navigation {
+  padding-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &Left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &Logo {
+      margin-right: 2rem;
+    }
+  }
+  &Mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Navigation {
+    &LeftItems {
+      display: none;
+    }
+    &Right {
+      display: none;
+    }
+    &Mobile {
+      display: block;
+    }
+  }
+}

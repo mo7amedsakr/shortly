@@ -1,0 +1,32 @@
+@import '../../UI/colors';
+.NavModal {
+  z-index: 1;
+  position: fixed;
+  top: 15%;
+  left: 10%;
+  background-color: $DarkViolet;
+  width: 80%;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-size: 2.5rem;
+  font-weight: 500;
+
+  &MiddleLine {
+    height: 1px;
+    margin: 2rem 0;
+    background-color: $Gray;
+  }
+
+  &Btns {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.Hide {
+  display: none;
+}

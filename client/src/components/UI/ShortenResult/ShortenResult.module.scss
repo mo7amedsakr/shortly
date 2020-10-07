@@ -1,0 +1,59 @@
+@import '../colors';
+
+.ShortenResult {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0rem 2rem;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+
+  &Original {
+    color: $VeryDarkBlue;
+  }
+
+  &Line {
+    display: none;
+  }
+
+  &Shorten {
+    margin-left: auto;
+    margin-right: 3rem;
+    color: $Cyan;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ShortenResult {
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+
+    &Original {
+      margin: 0;
+      padding: 0;
+    }
+
+    &Line {
+      display: block;
+      width: 150%;
+      height: 1px;
+      margin-left: -5rem;
+      background-color: $Gray;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &Shorten {
+      margin: 1rem 0;
+      padding: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

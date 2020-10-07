@@ -1,0 +1,56 @@
+@import '../../components/UI/colors';
+
+.Bg {
+  background-color: lighten($color: $Gray, $amount: 21);
+  margin-top: -4rem;
+}
+
+.AdvancedStatisics {
+  padding-bottom: 10rem;
+
+  &Text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &H2 {
+      color: $VeryDarkBlue;
+      font-size: 4rem;
+      margin: 0;
+    }
+    &P {
+      color: $Gray;
+      margin: 1rem 0;
+      width: 50%;
+    }
+  }
+  &Cards {
+    display: flex;
+    margin-top: 12rem;
+  }
+  // &::after {
+  //   content: '';
+  //   transform: translate(55%, -1500%);
+  //   width: 60rem;
+  //   height: 1rem;
+  //   background-color: $Cyan;
+  //   position: absolute;
+
+  //   //z-index: 1000000000;
+  // }
+}
+
+@media only screen and (max-width: 768px) {
+  .AdvancedStatisics {
+    &TextP {
+      width: 80%;
+    }
+    &Cards {
+      flex-direction: column;
+      margin-top: 8rem;
+    }
+    // &::after {
+    //   transform: rotate(90deg) translate(-80%, 630%);
+    // }
+  }
+}

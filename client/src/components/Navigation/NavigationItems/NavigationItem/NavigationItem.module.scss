@@ -1,0 +1,19 @@
+@import '../../../UI/colors';
+
+.NavigationItem {
+  margin: 0 2rem;
+  text-decoration: none;
+  color: $GrayishViolet;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $VeryDarkViolet;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .NavigationItem {
+    margin: 1.5rem 0;
+    color: #fff;
+  }
+}

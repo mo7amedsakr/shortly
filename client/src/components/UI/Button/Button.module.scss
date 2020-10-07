@@ -1,0 +1,69 @@
+@import '../colors';
+
+.Button {
+  background-color: $Cyan;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.2s;
+  user-select: none;
+
+  &NoBG {
+    background-color: transparent !important;
+    color: $Gray !important;
+    margin-right: 3rem;
+    &:hover {
+      color: $VeryDarkViolet !important;
+    }
+  }
+
+  &BigBorderRadius {
+    padding: 1rem 3rem;
+    border-radius: 100rem;
+  }
+
+  &BigBorderRadiusSm {
+    border-radius: 100rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  &SmallBorderRadius {
+    padding: 1rem 3.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &SmallBorderRadiusSm {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+  }
+
+  &Copied {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: $DarkViolet !important;
+  }
+
+  &:hover {
+    background-color: lighten($color: $Cyan, $amount: 20);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Button {
+    &NoBG {
+      margin: 0;
+      margin-bottom: 1.5rem;
+    }
+    &BigBorderRadius {
+      padding: 1.5rem 4rem;
+      border-radius: 100rem;
+    }
+    &SmallBorderRadiusSm,
+    &Copied {
+      width: 100%;
+    }
+  }
+}

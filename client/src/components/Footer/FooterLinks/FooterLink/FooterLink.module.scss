@@ -1,0 +1,11 @@
+@import '../../../UI/colors';
+
+.FooterLink {
+  text-decoration: none;
+  color: $Gray;
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+  &:hover {
+    color: $Cyan;
+  }
+}

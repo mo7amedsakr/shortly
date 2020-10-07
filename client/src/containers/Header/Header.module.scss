@@ -1,0 +1,62 @@
+@import '../../components/UI/colors';
+
+.Header {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &Left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &H1 {
+      font-weight: 700;
+      font-size: 7rem;
+      text-align: start;
+      color: $VeryDarkViolet;
+      margin-bottom: 0;
+    }
+    &P {
+      width: 70%;
+      text-align: start;
+      color: $Gray;
+      margin-top: -1.5rem;
+    }
+  }
+  &Right {
+    user-select: none;
+    &Img {
+      width: 140%;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Header {
+    margin-top: 4rem;
+    flex-direction: column-reverse;
+
+    &Left {
+      font-size: 2rem;
+      align-items: center;
+      &H1 {
+        text-align: center;
+        font-size: 5rem;
+      }
+      &P {
+        width: 100%;
+        text-align: center;
+        margin-top: 0;
+      }
+    }
+
+    &Right {
+      width: 115%;
+      overflow: hidden;
+      &Img {
+        transform: translateX(5%);
+        width: 130%;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.HamburgerIcon {
+  position: relative;
+
+  &,
+  &::after,
+  &::before {
+    width: 5.5rem;
+    height: 0.6rem;
+    background-color: hsl(0, 0%, 75%);
+    border-radius: 1px;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+  }
+
+  &::after {
+    margin-top: 1.5rem;
+  }
+
+  &::before {
+    margin-top: -1.5rem;
+  }
+}

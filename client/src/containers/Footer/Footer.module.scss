@@ -1,0 +1,46 @@
+@import '../../components/UI/colors';
+
+.Bg {
+  background-color: $VeryDarkViolet;
+}
+
+.Footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5rem 0;
+
+  &Logo {
+    padding: 0 5rem;
+    padding-left: 0;
+  }
+  &Links {
+    padding: 0;
+    display: flex;
+    margin-top: -2rem;
+  }
+  &Social {
+    &Facebook {
+      fill: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &Logo {
+      padding: 0;
+      margin-right: -0.5rem;
+    }
+    &Links {
+      flex-direction: column;
+    }
+    &Social {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

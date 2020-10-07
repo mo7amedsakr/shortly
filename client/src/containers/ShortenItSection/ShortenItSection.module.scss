@@ -1,0 +1,36 @@
+@import '../../components/UI/colors';
+
+.Bg {
+  background-color: lighten($color: $Gray, $amount: 21);
+}
+
+.ShortenIt {
+  margin-top: 13rem;
+  padding-bottom: 10rem;
+  &Main {
+    background-color: $DarkViolet;
+    background-image: url(../../assets/images/bg-shorten-desktop.svg);
+    padding: 5rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+  }
+  &Results {
+    margin-top: -7rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .ShortenIt {
+    margin-top: 15rem;
+    &Main {
+      flex-direction: column;
+      background-image: url(../../assets/images/bg-shorten-mobile.svg);
+      background-position: 12rem;
+      padding: 3rem;
+    }
+  }
+}
