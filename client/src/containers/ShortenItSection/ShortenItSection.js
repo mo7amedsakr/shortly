@@ -38,6 +38,9 @@ const ShortenItSection = () => {
         }
       );
       setLoading(false);
+      console.log(res);
+      console.log(res.data);
+      console.log(res.data.url);
       setShortenLinks((prev) => [
         {
           original: inputValue,
