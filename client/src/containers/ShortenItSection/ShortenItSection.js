@@ -9,7 +9,13 @@ import axios from 'axios';
 const ShortenItSection = () => {
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
-  const [shortenLinks, setShortenLinks] = useState([]);
+  const [shortenLinks, setShortenLinks] = useState(
+    JSON.parse(localStorage.getItem('links')) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('links', JSON.stringify(shortenLinks));
+  }, [shortenLinks]);
 
   const inputHandler = (value) => {
     setInputValue(value);
@@ -29,15 +35,15 @@ const ShortenItSection = () => {
   };
 
   const createShortenLink = async () => {
-    if (isUrl(inputValue)) {
-      setLoading(true);
+    if (!isUrl(inputValue)) return;
+    setLoading(true);
+    try {
       const res = await axios.post(
         'https://short-ly-url.herokuapp.com/api/url',
         {
           url: inputValue,
         }
       );
-      setLoading(false);
       setShortenLinks((prev) => [
         {
           original: inputValue,
@@ -45,7 +51,9 @@ const ShortenItSection = () => {
         },
         ...prev,
       ]);
-
+    } catch (error) {
+      console.log(error);
+    } finally {
       setLoading(false);
     }
   };
