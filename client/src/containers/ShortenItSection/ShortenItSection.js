@@ -13,10 +13,6 @@ const ShortenItSection = () => {
     JSON.parse(localStorage.getItem('links')) || []
   );
 
-  useEffect(() => {
-    localStorage.setItem('links', JSON.stringify(shortenLinks));
-  }, [shortenLinks]);
-
   const inputHandler = (value) => {
     setInputValue(value);
   };
@@ -44,13 +40,19 @@ const ShortenItSection = () => {
           url: inputValue,
         }
       );
-      setShortenLinks((prev) => [
-        {
-          original: inputValue,
-          shortUrl: res.data.url,
-        },
-        ...prev,
-      ]);
+      setShortenLinks((prev) => {
+        const newLinks = [
+          {
+            original: inputValue,
+            shortUrl: res.data.url,
+          },
+          ...prev,
+        ];
+
+        localStorage.setItem('links', JSON.stringify(newLinks));
+
+        return newLinks;
+      });
     } catch (error) {
       console.log(error);
     } finally {
